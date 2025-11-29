@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box; /* [cite: 33] */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* [cite: 35] */
+}
+
+/* Style the header */
+.header {
+    grid-area: header;
+    background-color: #f1f1f1;
+    padding: 30px; 
+    text-align: center; 
+    font-size: 35px; 
+}
+
+/* The container */
+.grid-container {
+    display: grid; /* [cite: 74] */
+    grid-template-areas:
+        'header header header header header header'
+        'left middle middle right right right' 
+        'footer footer footer footer footer footer'; 
+}
+
+.left
+.middle
+.right {
+    padding: 10px;
+    height: 300px;
+}
+
+/* Style the left column */
+.left {
+    grid-area: left;
+}
+
+/* Style the middle column */
+.middle {
+    grid-area: middle;
+}
+
+/* Style the right column */
+.right {
+    grid-area: right; 
+}
+
+/* Style the footer */
+.footer {
+    grid-area: footer; /* [cite: 99] */
+    background-color: #f1f1f1; /* [cite: 100] */
+    padding: 10px;
+    text-align: center; /* [cite: 101] */
+}
+
+/* Responsive layout - three columns stack on top of each other instead of next to each other when the screen size is 600px or less */
+@media (max-width: 600px) { 
+    .grid-container { 
+        grid-template-areas:
+            'header header header header header header' /* [cite: 106] */
+            'left left left left left left' /* [cite: 107] */
+            'middle middle middle middle middle middle' /* [cite: 108] */
+            'right right right right right right' /* [cite: 109] */
+            'footer footer footer footer footer footer'; /* [cite: 110] */
+    }
+} 
